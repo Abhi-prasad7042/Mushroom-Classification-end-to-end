@@ -12,13 +12,12 @@ Step 2:- Activate env
 conda activate mushroom
 ```
 Step 3:- Install cookiecutter
-```
+```bash
 pip install cookiecutter
 ```
 Step 4:- Run cookiecutter command for starting new project
 ```bash
 cookiecutter https://github.com/drivendata/cookiecutter-data-science
-
 ```
 Step 5:- It will give options in command line.
 ```bash
