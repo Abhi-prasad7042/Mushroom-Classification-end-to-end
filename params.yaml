@@ -1,0 +1,23 @@
+base:
+  project: mushroom-classification
+  random_state: 42
+  target_col: class
+
+data_source:
+  s3_source: data_given/dataset.csv
+
+load_data:
+  raw_dataset_csv: data/raw/dataset.csv
+
+split_data:
+  train_path: data/processed/train_dataset.csv
+  test_path: data/processed/test_dataset.csv
+  test_size: 0.2
+
+estimators:
+  RandomForestClassifier:
+    params:
+      n_estimators: 200
+      criterion: "entropy"
+
+model_dir: models
