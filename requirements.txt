@@ -15,3 +15,7 @@ phik
 jupyter 
 dvc
 dvc[gdrive]
+tox
+pytest
+flask
+gunicorn

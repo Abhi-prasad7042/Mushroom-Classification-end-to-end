@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h2 class="navbar-brand">Mushroom Classification</h2>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <form action={{url_for('predict')}} method="post">
+
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="cap-shape">Cap Shape:</label>
+                        <select class="custom-select" name="cap-shape" id="cap-shape" required>
+                            <option selected disabled value="">Choose Cap Shape</option>
+                            <option value="3">Bell</option>
+                            <option value="5">Conical</option>
+                            <option value="0">Convex</option>
+                            <option value="1">Flat</option>
+                            <option value="2">Knobbed</option>
+                            <option value="4">Sunken</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cap-surface">Cap Surface:</label>
+                        <select class="custom-select" name="cap-surface" id="cap-surface" required>
+                            <option selected disabled value="">Choose Cap Surface..</option>
+                            <option value="2">Fibrous</option>
+                            <option value="3">Grooves</option>
+                            <option value="0">scaly</option>
+                            <option value="1">Smooth</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cap-color">Cap Color:</label>
+                        <select class="custom-select" name="cap-color" id="cap-color" required>
+                            <option selected disabled value="">Choose Cap Color..</option>
+                            <option value="0">Brown</option>
+                            <option value="5">Buff</option>
+                            <option value="7">Cinnamon</option>
+                            <option value="1">Gray</option>
+                            <option value="6">Pink</option>
+                            <option value="8">Purple</option>
+                            <option value="2">Red</option>
+                            <option value="4">White</option>
+                            <option value="3">Yellow</option>
+                            <option value="9">Green</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="bruises">Bruises:</label>
+                        <select class="custom-select" name="bruises" id="bruises" required>
+                            <option selected disabled value="">Choose Bruises...</option>
+                            <option value="1">Yes</option>
+                            <option value="0">NO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="odor">Odor:</label>
+                        <select class="custom-select" name="odor" id="odor" required>
+                            <option selected disabled value="">Choose Odor..</option>
+                            <option value="4">Almond</option>
+                            <option value="5">Anise</option>
+                            <option value="7">Creosote</option>
+                            <option value="2">Fishy</option>
+                            <option value="8">Musty</option>
+                            <option value="0">None</option>
+                            <option value="6">Pungent</option>
+                            <option value="3">Spicy</option>
+                            <option value="1">Foul</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="gill-attachment">Gill Attachment:</label>
+                        <select class="custom-select" name="gill-attachment" id="gill-attachment" required>
+                            <option selected disabled value="">Choose Gill Attachment..</option>
+                            <option value="1">Attached</option>
+                            <option value="2">Descending</option>
+                            <option value="0">Free</option>
+                            <option value="3">Notched</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="gill-spacing">Gill Spacing:</label>
+                        <select class="custom-select" name="gill-spacing" id="gill-spacing" required>
+                            <option selected disabled value="">Choose Gill Spacing...</option>
+                            <option value="0">Close</option>
+                            <option value="1">Crowded</option>
+                            <option value="2">Distant</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="gill-size">Gill Size:</label>
+                        <select class="custom-select" name="gill-size" id="gill-size" required>
+                            <option selected disabled value="">Choose Gill Size..</option>
+                            <option value="0">Broad</option>
+                            <option value="1">Narrow</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="stalk-shape">Stalk Shape:</label>
+                        <select class="custom-select" name="stalk-shape" id="stalk-shape" required>
+                            <option selected disabled value="">Choose Stalk Shape..</option>
+                            <option value="1">Enlarging</option>
+                            <option value="0">Tapering</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="stalk-root">Stalk Root:</label>
+                        <select class="custom-select" name="stalk-root" id="stalk-root" required>
+                            <option selected disabled value="">Choose Stalk Root...</option>
+                            <option value="0">Bulbous</option>
+                            <option value="5">Club</option>
+                            <option value="3">Cup</option>
+                            <option value="2">Equal</option>
+                            <option value="6">Rhizomorphs</option>
+                            <option value="4">Rooted</option>
+                            <option value="1">Mussing</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
+                        <select class="custom-select" name="stalk-surface-above-ring" id="stalk-surface-above-ring"
+                            required>
+                            <option selected disabled value="">Choose Stalk Surface Above Ring..</option>
+                            <option value="2">Fibrous</option>
+                            <option value="3">Scaly</option>
+                            <option value="1">Silky</option>
+                            <option value="0">Smooth</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
+                        <select class="custom-select" name="stalk-surface-below-ring" id="stalk-surface-below-ring"
+                            required>
+                            <option selected disabled value="">Choose Stalk Surface Below Ring..</option>
+                            <option value="2">Fibrous</option>
+                            <option value="3">Scaly</option>
+                            <option value="1">Silky</option>
+                            <option value="0">Smooth</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="spore-print-color">Spore Print Color:</label>
+                        <select class="custom-select" name="spore-print-color" id="spore-print-color" required>
+                            <option selected disabled value="">Choose Spore Print Color...</option>
+                            <option value="2">Black</option>
+                            <option value="1">Brown</option>
+                            <option value="8">Buff</option>
+                            <option value="3">Chocolate</option>
+                            <option value="4">Green</option>
+                            <option value="6">Orange</option>
+                            <option value="5">Purple</option>
+                            <option value="0">White</option>
+                            <option value="7">Yellow</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="habitat">Habitat:</label>
+                        <select class="custom-select" name="habitat" id="habitat" required>
+                            <option selected disabled value="">Choose Habitat..</option>
+                            <option value="1">Grasses</option>
+                            <option value="3">Leaves</option>
+                            <option value="5">Meadows</option>
+                            <option value="2">Paths</option>
+                            <option value="4">Urban</option>
+                            <option value="6">Waste</option>
+                            <option value="0">Woods</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
