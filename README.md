@@ -3,6 +3,52 @@ Mushroom_classifications
 
 Mushroom classification, predicting wether the mushroom is edible or not
 
+Step 1:- Create env
+```base
+conda create -n mushroom python=3.7 -y
+```
+Step 2:- Activate env
+``base
+conda activate mushroom
+```
+Step 3:- Install cookiecutter
+```
+pip install cookiecutter
+```
+Step 4:- Run cookiecutter command for starting new project
+```bash
+cookiecutter https://github.com/drivendata/cookiecutter-data-science
+```
+Step 5:- It will give options in command line.
+```bash
+1. Project_name:
+2. Repo_name:
+3. Author_name:
+4. Description:
+5. Select open_source_license:
+6. s3_bucket [Optional]:
+7. Select python_interpreter:
+```
+Step 6:- Download dataset :- https://www.kaggle.com/datasets/uciml/mushroom-classification
+
+Step 7:- Initialize git then dvc
+```bash
+git init
+dvc init
+``` 
+Step 8:- Add data into dvc for tracking
+```bash
+dvc add data_given/dataset.csv
+```
+Step 9:- Add to github
+```bash
+git add -A
+git commit -m "first commit"
+git remote add origin https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end.git
+git branch -M main
+git push -u origin main
+```
+
 Project Organization
 ------------
 
