@@ -19,5 +19,8 @@ estimators:
     params:
       n_estimators: 200
       criterion: "entropy"
+reports:
+  params: reports/params.json
+  scores: reports/scores.json
 
 model_dir: models

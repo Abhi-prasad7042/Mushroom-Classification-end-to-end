@@ -6,13 +6,19 @@ import os
 from pyexpat import XML_PARAM_ENTITY_PARSING_ALWAYS
 import warnings
 import pandas as pd
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from get_data import read_params
 import argparse
 import joblib
 import json
+
+def eval_met(actual, pred):
+    ps = precision_score(actual, pred)
+    rs = recall_score(actual, pred)
+    f1 = f1_score(actual, pred)
+    return ps,rs,f1
 
 def train_and_evaluate(config_path):
     config = read_params(config_path)
@@ -38,12 +44,31 @@ def train_and_evaluate(config_path):
     model = RandomForestClassifier(n_estimators=n_estimators, criterion=criterion, random_state=random_state)
     model.fit(X_train,y_train)
 
-    y_preds = model.predict(X_test)
-    cm = confusion_matrix(y_test,y_preds)
-    cr = classification_report(y_test,y_preds)
+    y_pred = model.predict(X_test)
+    (ps, rs,f1) = eval_met(y_test, y_pred)
 
-    print(cm)
-    print(cr)
+    scores_file = config["reports"]["scores"]
+    params_file = config["reports"]["params"]
+
+    with open(scores_file, "w") as f:
+        scores = {
+            "precision score": ps,
+            "recall score": rs,
+            "f1 score": f1
+        }
+        json.dump(scores, f, indent=4)
+
+    with open(params_file, "w") as f:
+        params = {
+            "n_estimators": n_estimators,
+            "criterion": criterion
+        }
+        json.dump(params, f, indent=4)
+
+    
+
+    model_path = os.path.join(model_dir,"model.joblib")
+    joblib.dump(model,model_path)
 
 
 if __name__ == "__main__":
