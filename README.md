@@ -8,7 +8,7 @@ Step 1:- Create env
 conda create -n mushroom python=3.7 -y
 ```
 Step 2:- Activate env
-``bash
+```bash
 conda activate mushroom
 ```
 Step 3:- Install cookiecutter
