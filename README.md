@@ -81,20 +81,20 @@ Project Organization
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    │   ├── get_data.py           <- Get data file reads the configuration file and reads the data.
+    │   │   
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
+    │   ├── load_data.py          <- This file reads the data from data source and save it in data/raw 
+    │   │                            for futher process.
     │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   ├── split_data.py         <- This file split the data into train and test dataset and save it 
+    │   │                            data/processed folder.
+    │   │   
     │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
+    │   └── train_and_evaluate.py  <- This file load the train and test data. Then train the model save
+    │                                 save metrics and parameters to reports folder and saves the model
+    │                                 to model directory.
+    |                                 
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
