@@ -4,11 +4,11 @@ Mushroom_classifications
 Mushroom classification, predicting wether the mushroom is edible or not
 
 Step 1:- Create env
-```base
+```bash
 conda create -n mushroom python=3.7 -y
 ```
 Step 2:- Activate env
-``base
+``bash
 conda activate mushroom
 ```
 Step 3:- Install cookiecutter
