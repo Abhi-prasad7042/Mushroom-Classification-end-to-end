@@ -14,6 +14,10 @@ app = Flask(__name__, template_folder=template_dir)
 def index():
     return render_template("home.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route('/predict',methods=['POST'])
 def predict():
     final_feat = list(request.form.values())

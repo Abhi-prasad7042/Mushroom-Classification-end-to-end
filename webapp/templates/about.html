@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <h1 class="navbar-brand"><a class="nav-link" href="{{url_for('index')}}">Mushroom Classification</a></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end"><b>Source Code</b><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item disabled">
+              <a class="nav-link" href="{{url_for('about')}}"><b>About</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="https://github.com/Abhi-prasad7042"><b>GitHub</b></a>
+            </li>
+          </ul>
+        </div>
+    </nav><br><br>
+
+    <main role="main" class="container">
+        <div class="jumbotron">
+          <h1>Mushroom Classification</h1>
+          <br>
+          <h2 class="lead">Internship Project in Ineuron</h2>
+          <br>
+          <br>
+
+          <h3>Problem statement</h3>
+          <p>The Audubon Society Field Guide to North American Mushrooms contains descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the
+            Agaricus and Lepiota Family Mushroom (1981). Each species is labelled as either
+            definitely edible, definitely poisonous, or maybe edible but not recommended. This last
+            category was merged with the toxic category. The Guide asserts unequivocally that
+            there is no simple rule for judging a mushroom's edibility, such as "leaflets three, leave it
+            be" for Poisonous Oak and Ivy.
+            The main goal is to predict which mushroom is poisonous & which is edible.</p>
+
+          <br>
+          <h4>Approach:</h4>
+          <p>This is Classification problem of machine learning, tasks that have been done in this probject is Data Exploration, Data Cleaning, Feature Engineering, Model Building and Model Testing. Tried different machine learning algorithms that's best fit for the this case. Classification algorithms:- Logistic Regression, Decision tree Classification, RandomForestClassifier, SVM, KNeighbors Classifier.</p>
+          <br>
+          <h4>Result:</h4>
+          <p>Build a solution that should able to predict which mushroom is
+            poisonous & which is edible.</p>
+          <br>
+
+          <h4>Web:</h4>
+          <p>To create webapp we used flask here, and for templates design we used bootstrap. For deployement we used heroku because it is free open source library and for more information click on <a href="https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end/blob/main/docs/HLD%20Report%20Mushroom%20classification.docx?raw=true">HLD report</a> and <a href="https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end/blob/main/docs/LLD%20Report%20for%20Mushroom%20classification.docx?raw=true">LLD report</a>. For more details like how do we make pipelines for data science project, what are the steps we all need to create env and about data source click <a href="https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end/blob/main/README.md">Readme.md</a>.</p>
+          
+        </div>
+      </main>
+
+
+</body>
+
+</html>
