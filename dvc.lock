@@ -7,11 +7,11 @@ stages:
       md5: b72468262deeea47c61a0bec65cc31b8
       size: 252034
     - path: src/get_data.py
-      md5: 1abdc4194bb69376aa9bafa4f0fa3e65
-      size: 652
+      md5: 337a98592c054d098385adc52687cd1e
+      size: 814
     - path: src/load_data.py
-      md5: 81d9868936be526c2c981dead6efef01
-      size: 568
+      md5: 2817711124fc2b6c89e42edc7da6c514
+      size: 638
     outs:
     - path: data/raw/dataset.csv
       md5: b72468262deeea47c61a0bec65cc31b8
@@ -23,8 +23,8 @@ stages:
       md5: b72468262deeea47c61a0bec65cc31b8
       size: 252034
     - path: src/split_data.py
-      md5: 1a5e20b62b8fd8a4fda6d7ecac3c6d87
-      size: 1019
+      md5: 4f0010dd9de20bb327893aa27c43d706
+      size: 1121
     outs:
     - path: data/processed/test_dataset.csv
       md5: 15b261c8220c76b50b471005f91825f2

@@ -6,17 +6,26 @@ import os
 import yaml
 import pandas as pd
 import argparse
+import logging
+
 
 def read_params(config_path):
-    with open(config_path) as f:
-        config = yaml.safe_load(f)
-    return config
+    try: 
+        with open(config_path) as f:
+            config = yaml.safe_load(f)
+        return config
+    except Exception as e:
+        print(e)
+
 
 def get_data(config_path):
-    config = read_params(config_path)
-    data_path = config["data_source"]["s3_source"]
-    df = pd.read_csv(data_path)
-    return df
+    try: 
+        config = read_params(config_path)
+        data_path = config["data_source"]["s3_source"]
+        df = pd.read_csv(data_path)
+        return df
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":

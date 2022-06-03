@@ -1,0 +1,7 @@
+2022-06-03 14:12:16,849 INFO template_dir linked succssfully
+2022-06-03 14:12:18,223 INFO model load successfully
+2022-06-03 14:12:18,228 INFO Application running succussfully
+2022-06-03 14:12:18,251 WARNING  * Debugger is active!
+2022-06-03 14:12:18,273 INFO  * Debugger PIN: 414-569-841
+2022-06-03 14:12:32,943 INFO 127.0.0.1 - - [03/Jun/2022 14:12:32] "GET /about HTTP/1.1" 200 -
+2022-06-03 14:12:47,590 INFO 127.0.0.1 - - [03/Jun/2022 14:12:47] "GET / HTTP/1.1" 200 -
