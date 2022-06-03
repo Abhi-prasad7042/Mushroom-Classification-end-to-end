@@ -1,7 +1,21 @@
-Mushroom_classifications
+## MUSHROOM CLASSIFICATION
 ==============================
 
-Mushroom classification, predicting wether the mushroom is edible or not
+### Problem Statement: <br>
+The goal of this project is to predict which mushroom is poisonous & which is edible based on different parameters like population, habitat, bruises, cap-shape, and etc. This project can assist people to judge whether the mushroom is edible or poisonous.
+
+### Approach: <br>
+The classical machine learning tasks like Data Exploration, Data cleaning, Feature Engineering, Model Building and Model Testing. Tried different machine learning algorithms that's best fit for this case. Machine Learning Models:- Logistic Regression, RandomForestClassifier, Decision Tree Classification, KNeighbors Classifier, Xgboost, and Adaboost.
+
+### Result: <br>
+We have to build a soultion that should able to predict whether the mushroom is edible or poisonous.
+
+DEPLOYED APPLICATION LINK: http://mushroom7042.herokuapp.com/ <br>
+<br>
+FOR DOCUMENTATION LIKE :- LLD, HLD, AND WIREFRAME OF THIS PROJECT VISIT HERE:- https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end/tree/main/docs
+<br>
+
+### STEPS ARE MENTIONED BELOW FOR MAKING THE ENTIRE PIPELINE
 
 Step 1:- Create env
 ```bash
@@ -11,6 +25,8 @@ Step 2:- Activate env
 ```bash
 conda activate mushroom
 ```
+##### We used cookie cutter for making template of this project
+<br>
 Step 3:- Install cookiecutter
 ```bash
 pip install cookiecutter
@@ -28,25 +44,6 @@ Step 5:- It will give options in command line.
 5. Select open_source_license:
 6. s3_bucket [Optional]:
 7. Select python_interpreter:
-```
-Step 6:- Download dataset :- https://www.kaggle.com/datasets/uciml/mushroom-classification
-
-Step 7:- Initialize git then dvc
-```bash
-git init
-dvc init
-``` 
-Step 8:- Add data into dvc for tracking
-```bash
-dvc add data_given/dataset.csv
-```
-Step 9:- Add to github
-```bash
-git add -A
-git commit -m "first commit"
-git remote add origin https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end.git
-git branch -M main
-git push -u origin main
 ```
 
 Project Organization
@@ -100,4 +97,43 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+Step 6:- Download dataset :- https://www.kaggle.com/datasets/uciml/mushroom-classification
+
+Step 7:- Initialize git then dvc
+```bash
+git init
+dvc init
+``` 
+Step 8:- Add data into dvc for tracking
+```bash
+dvc add data_given/dataset.csv
+```
+Step 9:- Add to github
+```bash
+git add -A
+git commit -m "first commit"
+git remote add origin https://github.com/Abhi-prasad7042/Mushroom-classification-end-to-end.git
+git branch -M main
+git push -u origin main
+```
+
+Step 10:- Create ```params.yaml``` and ```dvc.yaml```
+
+After finish model building now time to create webapp:- <br>
+```bash
+In webapp folder we have templates of the webpage and for styling we used bootstrap here.
+```
+Step 11:- 
+```app.py``` on root dir for creating flask api
+Now make routes like `\` for rendering home page and `/predict` for rendering predictions.
+
+step 20:
+For automation of the project create dir `.github\workflow\ci-cd.yaml` we used here github actions for automating our project.
+
+<br>
+Author:Rohan patankar
+<br>
+For any queries related to ml/dl contact me <a href="mailto:abhiprasad7042@gmail.com?subject = Feedback&body = Message">abhiprasad7042@gmail.com</a>
+<br>
+## Thank You
