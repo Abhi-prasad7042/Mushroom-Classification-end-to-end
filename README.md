@@ -35,6 +35,7 @@ cookiecutter https://github.com/drivendata/cookiecutter-data-science
 ```
 Step 5:- It will give options in command line.
 ```bash
+
 1. Project_name:
 2. Repo_name:
 3. Author_name:
@@ -42,6 +43,7 @@ Step 5:- It will give options in command line.
 5. Select open_source_license:
 6. s3_bucket [Optional]:
 7. Select python_interpreter:
+
 ```
 
 
