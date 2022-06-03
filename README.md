@@ -1,5 +1,4 @@
 ## MUSHROOM CLASSIFICATION
-==============================
 
 ### Problem Statement: <br>
 The goal of this project is to predict which mushroom is poisonous & which is edible based on different parameters like population, habitat, bruises, cap-shape, and etc. This project can assist people to judge whether the mushroom is edible or poisonous.
@@ -26,7 +25,6 @@ Step 2:- Activate env
 conda activate mushroom
 ```
 ##### We used cookie cutter for making template of this project
-<br>
 Step 3:- Install cookiecutter
 ```bash
 pip install cookiecutter
@@ -45,6 +43,7 @@ Step 5:- It will give options in command line.
 6. s3_bucket [Optional]:
 7. Select python_interpreter:
 ```
+
 
 Project Organization
 ------------
@@ -132,8 +131,9 @@ step 20:
 For automation of the project create dir `.github\workflow\ci-cd.yaml` we used here github actions for automating our project.
 
 <br>
-Author:Rohan patankar
+Author: Abhishek Kumar
 <br>
 For any queries related to ml/dl contact me <a href="mailto:abhiprasad7042@gmail.com?subject = Feedback&body = Message">abhiprasad7042@gmail.com</a>
 <br>
+
 ## Thank You
